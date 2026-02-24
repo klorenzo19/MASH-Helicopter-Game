@@ -21,21 +21,20 @@ public class HelicopterController : MonoBehaviour
     // Update() runs every single frame
     void Update()
     {
-        // Don't allow movement if the game is over
-        if (gameManager != null && gameManager.isGameOver) return;
-
-        // Read arrow key input (-1, 0, or 1)
-        float moveX = Input.GetAxis("Horizontal");   // Left/Right arrow keys
-        float moveY = Input.GetAxis("Vertical");     // Up/Down arrow keys
-
-        // Apply movement to the Rigidbody
-        rb.linearVelocity = new Vector2(moveX * moveSpeed, moveY * moveSpeed);
-
-        // Press R to reset
+        // Check for reset FIRST, before anything else
         if (Input.GetKeyDown(KeyCode.R))
         {
             gameManager.ResetGame();
+            return;
         }
+
+        // Now check if game is over (blocks movement but not reset)
+        if (gameManager != null && gameManager.isGameOver) return;
+
+        float moveX = Input.GetAxis("Horizontal");
+        float moveY = Input.GetAxis("Vertical");
+
+        rb.linearVelocity = new Vector2(moveX * moveSpeed, moveY * moveSpeed);
     }
 
     // OnTriggerEnter2D() fires when this object touches a trigger collider
