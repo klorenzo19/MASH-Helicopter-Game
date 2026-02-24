@@ -1959,7 +1959,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 43097d2a89eb7f94abfc9a24ce4d8ee9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2062,7 +2062,7 @@ MonoBehaviour:
   totalSoldiersText: {fileID: 1311500002}
   gameOverPanel: {fileID: 248894353}
   youWinPanel: {fileID: 405471905}
-  pickupSound: {fileID: 0}
+  pickupSound: {fileID: 893384474}
   isGameOver: 0
 --- !u!4 &893384476
 Transform:
